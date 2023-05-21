@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "f09ade72-a7ef-41ff-952e-acf2c405e8f7",
+		"name": "Ngopi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ListProduct",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJkYTYwNTRjMi1hM2FlLTQ2YzctOWFiMy04Y2IzMDVkZWZmN2IiLCJpYXQiOiIyMS8wNS8yMDIzIDExOjM1OjQ4IiwiRW1haWwiOiJBZG1pbkBnbWFpbC5jb20iLCJleHAiOjE2ODQ2Njk1NDgsImlzcyI6IkpXVEF1dGhlbnRpY2F0aW9uU2VydmVyIiwiYXVkIjoiSldUU2VydmljZVBvc3RtYW5DbGllbnQifQ.MD3hgpewdI156_Xttw0vnulPzUqmAGqj8vXNyyRsmyc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"PageNumber\": 1,\r\n    \"PageSize\": 10,\r\n    \"HargaMin\": 0,\r\n    \"HargaMax\": 1000000,\r\n    \"OrderBy\": 1, // 1 order by product name, 2 for brand\r\n    \"Origin\": [1], // the default is it will show all, but if you choose (for an example) 1, it will show just originId 1\r\n    \"Species\": [1], // the default is it will show all, but if you choose (for an example) 1, it will show just speciesId 1\r\n    \"RoastLevel\": [1], // the default is it will show all, but if you choose (for an example) 1, it will show just roastLevelId 1\r\n    \"Tasted\": [1], // the default is it will show all, but if you choose (for an example) 1, it will show just tastedId 1\r\n    \"Processing\": [1] // // the default is it will show all, but if you choose (for an example) 1, it will show just processingId 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7256/api/list-product",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"list-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwNDYwMmJmOS0yMTY1LTRkZjYtODVkYi1kNzYzZDJmNDUyNjUiLCJpYXQiOiIyMS8wNS8yMDIzIDEwOjU2OjQ2IiwiVXNlcklkIjoiMCIsIkRpc3BsYXlOYW1lIjoiQWRtaW4iLCJVc2VyTmFtZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJleHAiOjE2ODQ2NjcyMDYsImlzcyI6IkpXVEF1dGhlbnRpY2F0aW9uU2VydmVyIiwiYXVkIjoiSldUU2VydmljZVBvc3RtYW5DbGllbnQifQ.D043xajJnWOasYV7Nb5HEkB8MXEDaCuReJ7zW2fH7uY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:7256/api/product/0d575013-510b-4d1c-8e44-5cb684c5e85d",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"product",
+						"0d575013-510b-4d1c-8e44-5cb684c5e85d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"emailId\": \"Admin@gmail.com\",\r\n    \"password\": \"P@ssw0rd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7256/api/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Super\",\r\n    \"lastName\": \"Admin\",\r\n    \"email\": \"Admin@gmail.com\",\r\n    \"phone\": \"081289052010\",\r\n    \"password\": \"P@ssw0rd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7256/api/register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
